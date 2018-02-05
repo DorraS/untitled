@@ -1,0 +1,70 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+    body {
+        font-family: 'Ubuntu Mono', monospace;
+        color: white;
+    }
+    #code {
+        background: #300a24;
+        width: 800px;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .command {
+        margin: 0;
+        display: inline-block;
+    }
+    .lime {color: #8ae234;}
+    .white {color: #ffffff;}
+    .cyan {color: #729fcf;}
+    .bold {font-weight: bold;}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="code">
+    <script>
+        function funcCom(a, b, c) {
+            document.write("<p class='command lime bold'>user@computer</p><p class='command white'>:</p><p class='command cyan bold'>~",a,"</p><p title='",c,"' class='command white'>$ ",b,"</p><br/>");
+        }
+        function funcTer(d) {
+            document.write('<p class=\'command white\'>',d,'</p><br/>');
+        }
+
+        funcCom('','cd ~/Documents/','aaa');
+        funcCom('/Documents','mkdir FOLDER','aaa');
+        funcCom('/Documents','cd FOLDER/','aaa');
+        funcCom('/Documents/FOLDER','git init','aaa');
+        funcTer('Initialized empty Git repository in /home/user/Documents/FOLDER/.git/');
+        funcCom('/Documents/FOLDER','git remote add NAME https://github.com/GHNAME/GHREP.git','aaa');
+        funcCom('/Documents/FOLDER','git pull NAME master','aaa');
+        funcTer('remote: Counting objects: 0, done.');
+        funcTer('remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0');
+        funcTer('Unpacking objects: 100% (0/0), done.');
+        funcTer('From https://github.com/GHNAME/GHREP');
+        funcTer('&nbsp;*&nbsp;branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> FETCH_HEAD');
+        funcTer('&nbsp;*&nbsp;[new branch]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> NAME/master');
+        funcCom('/Documents/FOLDER','echo \'Vive Simplon !\' > simplon','aaa');
+        funcCom('/Documents/FOLDER','git add simplon','aaa');
+        funcCom('/Documents/FOLDER','git commit -m \'COMMIT DESC\'','aaa');
+        funcTer('[master 1fbcb8e] COMMIT DESC');
+        funcTer('&nbsp;1 file changed, 1 insertion(+)');
+        funcTer('&nbsp;create mode 100644 simplon');
+        funcCom('/Documents/FOLDER','git push NAME master','aaa');
+        funcTer('Username for \'https://github.com\': GHNAME');
+        funcTer('Password for \'https://GHNAME@github.com\':');
+        funcTer('Counting objects: 1, done.');
+        funcTer('Delta compression using up to 2 threads.');
+        funcTer('Compressing objects: 100% (1/1), done.');
+        funcTer('Writing objects: 100% (1/1), 0 bytes | 0 bytes/s, done.');
+        funcTer('Total 1 (delta 0), reused 0 (delta 0)');
+        funcTer('To https://github.com/GHNAME/GHREP.git');
+        funcTer('&nbsp;&nbsp;&nbsp;0c621bb..1fbcb8e  master -> master');
+    </script>
+</div>
+</body>
+</html>
